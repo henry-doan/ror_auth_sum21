@@ -10,6 +10,13 @@ const Navbar = ({ user, handleLogout, location, history }) => {
       // links that user see when logged in
       return (
         <Menu.Menu position='right'>
+          <Link to="/dash">
+            <Menu.Item
+              name='dash'
+              id='dash'
+              active={location.pathname === '/dash'}
+            />
+          </Link>
           <Menu.Item
             name='logout'
             onClick={() => handleLogout(history) }
