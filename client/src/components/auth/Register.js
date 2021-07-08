@@ -3,7 +3,7 @@ import { AuthConsumer } from "../../providers/AuthProvider";
 import { Button, Form, Segment, Header } from 'semantic-ui-react';
 
 const Register = ({ handleRegister, history }) => {
-  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' }) 
+  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '', name: '' }) 
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,9 +19,17 @@ const Register = ({ handleRegister, history }) => {
       <Header as='h1' textAlign='center'>Register</Header>
       <Form onSubmit={handleSubmit}>
         <Form.Input
-          label="Email"
+          label="Name"
           required
           autoFocus
+          name='name'
+          value={user.name}
+          placeholder='Name'
+          onChange={(e, { value }) => setUser({ ...user, name: value })}
+        />
+        <Form.Input
+          label="Email"
+          required
           name='email'
           value={user.email}
           placeholder='Email'

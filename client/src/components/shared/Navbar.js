@@ -17,6 +17,13 @@ const Navbar = ({ user, handleLogout, location, history }) => {
               active={location.pathname === '/dash'}
             />
           </Link>
+          <Link to="/profile">
+            <Menu.Item
+              name='profile'
+              id='profile'
+              active={location.pathname === '/profile'}
+            />
+          </Link>
           <Menu.Item
             name='logout'
             onClick={() => handleLogout(history) }
